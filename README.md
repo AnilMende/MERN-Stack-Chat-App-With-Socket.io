@@ -11,3 +11,17 @@ communication between client app and server.
 -> This is done using the useNavigate()
 -> user info like image, status whether online or offline, name and if there are any unread messages are visible on the sidebar.
 -> selectedUser and setSelectedUser are passed as props to the sidebar from the Homepage.
+
+==> Added ChatContainer <==
+-> added messages form both the sender and receiver.
+-> added input to send the message and file upload feature to chose a file from the system.
+
+==> Added RightSidebar <==
+-> Displayed user profilePic, username and online status on clicking on the user profile.
+-> Media section used to display all the images sent between the users.
+-> on clicking the image it will be opened on the new window using window.opnen(url).
+
+==> Added LoginPage <===
+-> For Sign up page fullName, email, password, create Account.
+-> separate states for the fullName, email, password.
+-> For Login page email, password and Login as button.
