@@ -25,3 +25,10 @@ communication between client app and server.
 -> For Sign up page fullName, email, password, create Account.
 -> separate states for the fullName, email, password.
 -> For Login page email, password and Login as button.
+
+==> Added Profile Page <==
+-> added an image input of file to change the user prfoilePic.
+-> an input to change the user name using setName state.
+-> used textArea to change the user bio using setbio state.
+-> onSubmiting of the form the, when clicked on the save the user will navigated to the home page using th useNavigate Hook.
+-> event.preventDefault() is used to prevent the website from the refresh on submission.
