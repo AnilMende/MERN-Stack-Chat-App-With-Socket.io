@@ -32,3 +32,11 @@ communication between client app and server.
 -> used textArea to change the user bio using setbio state.
 -> onSubmiting of the form the, when clicked on the save the user will navigated to the home page using th useNavigate Hook.
 -> event.preventDefault() is used to prevent the website from the refresh on submission.
+
+== Backend ==
+-> express : Useful in Routing, Middlewares.
+-> bcryptjs : Helps to hash the passwords.
+-> mongoose : Helps you write the strict MongoDB Schemas.
+-> nodemon : helps in restarting the server on every change we make, instead of killing the server and starting it.
+-> Socket.io : Helpful in the bidirectional communication of messages between the users, built on top of the webSockets.
+-> cors : Helps in connceting your backend with any other frontend urls.
