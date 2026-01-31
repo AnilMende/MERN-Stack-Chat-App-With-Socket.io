@@ -40,3 +40,13 @@ communication between client app and server.
 -> nodemon : helps in restarting the server on every change we make, instead of killing the server and starting it.
 -> Socket.io : Helpful in the bidirectional communication of messages between the users, built on top of the webSockets.
 -> cors : Helps in connceting your backend with any other frontend urls.
+-> cloudinary : to store the images.
+
+==> User Authentication <==
+-> Sign Up : to create a new user with the details like email, fullName, bio, profilePic, and Password.
+-> Login : To login the existing user with details email and password.
+-> protectedRoute : It's a middleware which will be executed before executing the controller function, helpful in accessing the protected routes.
+-> checkAuth : to check the user authorization details.
+-> updateProfile : to update the fullName, profilePic and bio, profilePic will updated using the clodinary and fullname , bio throught req.body.
+-> By default findOneAndUpdate() with return the Object before update was applied, by setting the new : true, findOneAndUpdate() will give you the object after update was applied.
+-> Routes are /signup, /login,/update-profile, /check.
