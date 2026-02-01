@@ -50,3 +50,10 @@ communication between client app and server.
 -> updateProfile : to update the fullName, profilePic and bio, profilePic will updated using the clodinary and fullname , bio throught req.body.
 -> By default findOneAndUpdate() with return the Object before update was applied, by setting the new : true, findOneAndUpdate() will give you the object after update was applied.
 -> Routes are /signup, /login,/update-profile, /check.
+
+==> Message Controllers <==
+-> UsersForSidebar : By excluding the main user displaying all the users that is contact list, we are getting all the users by comparing the users not equal to actual user.
+-> Counting Unseen Messages using the senderId and receiverId where the messages are not seen add that count of messages with senderId in the unseenMessages.
+-> getMessages : get all messages for the selected user, displaying the messages between the two users, and whenever user opens chats then all the messages will be marked as seen.
+-> markMessageAsSeen : this is the api to mark the message as seen by using the message id, that is we are marking the particular message as seen using the id of that message,
+-> in this we are using findByIdAndUpdate() by passing id and seen : true.
