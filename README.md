@@ -57,3 +57,6 @@ communication between client app and server.
 -> getMessages : get all messages for the selected user, displaying the messages between the two users, and whenever user opens chats then all the messages will be marked as seen.
 -> markMessageAsSeen : this is the api to mark the message as seen by using the message id, that is we are marking the particular message as seen using the id of that message,
 -> in this we are using findByIdAndUpdate() by passing id and seen : true.
+-> sendMessage : to send the message from the sender to receiver, if there is image then upload it to te cloudinary and store that url in the db, 
+                 create a newMessage with senderId, recieverId, text and image : imageUrl, with the help of the socket.io based on the receiver sokcetid we send the messages,
+                 that is emit messages to receiverSocketId by newMessage operation.By this the messages will get displayed on the receiver side.
