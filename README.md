@@ -60,3 +60,14 @@ communication between client app and server.
 -> sendMessage : to send the message from the sender to receiver, if there is image then upload it to te cloudinary and store that url in the db, 
                  create a newMessage with senderId, recieverId, text and image : imageUrl, with the help of the socket.io based on the receiver sokcetid we send the messages,
                  that is emit messages to receiverSocketId by newMessage operation.By this the messages will get displayed on the receiver side.
+
+==> Added Functions to Fetch Data From Backend <==
+-> With Help of react hook useContext we can share values between multiple levels of components without passing props through each level.
+-> checkAuth is to check the user authentication, if valid user setAuthUser to data.user and connectSocket to the data.user.
+-> setAuthUser is to store the authenticated user in frontend.
+-> connectSocket is to connect socket for authentication.
+-> setToken is to set the token in the frontend
+-> and token is stored in localStorage using setItem("token", token)
+-> login function to handle user authentication and socket connection, if user is valid we make socket connection.
+-> logout function is to remove the token from the localStorage using the removeItem("token") and setAuthUser to null and socket.disconnect() to disconnect with socket.
+-> updateProfile is to update the userData using update-profile api from the backend, and user to setAuthUser.
