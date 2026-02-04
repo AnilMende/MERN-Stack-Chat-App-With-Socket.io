@@ -4,6 +4,7 @@ import axios from 'axios';
 import toast from "react-hot-toast";
 import { useEffect } from "react";
 import { io } from 'socket.io-client';
+import { data } from "react-router-dom";
 
 
 const backend_url = import.meta.env.VITE_BACKEND_URL;
@@ -69,6 +70,7 @@ export const AuthProvider = ({ children }) => {
         setOnlineUsers([]);
         axios.defaults.headers.common["token"] = null;
         socket.disconnect();
+        toast.success("Logged out successfully");
     }
 
     //Update Profile Function to handle user profile updates
@@ -77,7 +79,7 @@ export const AuthProvider = ({ children }) => {
             const { data } = await axios.put("/api/auth/update-profile", body);
             if(data.success){
                 setAuthUser(data.user);
-                toast.success("Profile Updated Successfully");
+                toast.success("Profile updated successfully");
             }
         } catch (error) {
             toast.error(error.message);

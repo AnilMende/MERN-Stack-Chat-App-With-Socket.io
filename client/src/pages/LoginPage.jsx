@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import assets from "../assets/assets";
+import React, { useContext, useState } from "react";
+import assets from "../assets/assets.js";
+import { AuthContext } from "../../context/AuthContext.jsx";
 
 const LoginPage = () => {
 
@@ -14,6 +15,10 @@ const LoginPage = () => {
     const [isDataSubmitted, setIsDataSubmitted] = useState(false);
 
 
+    //This function fetches the data from the backend
+    const { login } = useContext(AuthContext);
+
+
     const onSubmitHandler = (event) => {
         event.preventDefault();
 
@@ -21,6 +26,10 @@ const LoginPage = () => {
             setIsDataSubmitted(true);
             return;
         }
+
+        //if the currState is signup it will call the signup api otherwise it will call the login api
+        //login function contains state and credentials as parameters.
+        login(currState === "Sign up" ? "signup" : "login", { fullName, email, password, bio});
     }
 
 
