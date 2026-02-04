@@ -20,6 +20,10 @@ export const protectRoute = async (req, res, next) => {
         //in that case we will add the user data in the request
         //and now we can access the user data in the controller function
         req.user = user;
+
+        //next is necessary to execute the next function 
+        // or pass the execution to other function in route
+        next();
         
     } catch (error) {
         console.log(error.message);
