@@ -71,3 +71,21 @@ communication between client app and server.
 -> login function to handle user authentication and socket connection, if user is valid we make socket connection.
 -> logout function is to remove the token from the localStorage using the removeItem("token") and setAuthUser to null and socket.disconnect() to disconnect with socket.
 -> updateProfile is to update the userData using update-profile api from the backend, and user to setAuthUser.
+
+==> Connected Backend APIs with Functions to Use them with Frontend <==
+-> With the help of useContext we can use the functions in AuthContext.
+-> login function is to display the signup form and login form based on the currState whether it is signup or login.
+-> updateProfile is to update the details of the user like profilePic, fullName, bio. If the profilePic is not changed we can include fullName and bio.
+-> if the profilePic we can not directly store it, FileReader is a browser API, it reads files on the client side.
+-> FileReader is needed because files can't be sent directly as JSON.
+-> reader.readAsDataURL(image) starts reading the image file, and converts it into a Data URL.
+-> Exampel : Format will look like  data : image/png: base64, ioveIhefogrtg..
+-> This code includes file type (image/png).
+-> encoding type 64.
+-> reader.onload() this function runs only after the file is fully read.
+-> reader.result contains Base64 string.
+-> after successful profile update, redirect the user to home page.
+-> logout function is imported form the AuthContext.
+-> logout function removes the token from the localStorage.removeItem("token")
+-> if there is no token then we are logged out and socket is disconected.
+-> onclicking the logut we get logged out.
