@@ -51,6 +51,12 @@ communication between client app and server.
 -> By default findOneAndUpdate() with return the Object before update was applied, by setting the new : true, findOneAndUpdate() will give you the object after update was applied.
 -> Routes are /signup, /login,/update-profile, /check.
 
+==> Protected Route (Middleware) <==
+-> contains req, res, next as parameters.
+-> middleware helps to change the req and res.
+-> after successfull verification of the user.
+-> the access passed to the next route uisng the next() at the end of the route.
+
 ==> Message Controllers <==
 -> UsersForSidebar : By excluding the main user displaying all the users that is contact list, we are getting all the users by comparing the users not equal to actual user.
 -> Counting Unseen Messages using the senderId and receiverId where the messages are not seen add that count of messages with senderId in the unseenMessages.
