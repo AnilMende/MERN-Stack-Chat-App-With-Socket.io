@@ -95,3 +95,15 @@ communication between client app and server.
 -> logout function removes the token from the localStorage.removeItem("token")
 -> if there is no token then we are logged out and socket is disconected.
 -> onclicking the logut we get logged out.
+
+==> ChatContext <==
+-> chat context is to pass the props between the componets using the various functions.
+-> getUsers: functions to get all users for the sidebar by using the api /auth/messages/users
+-> getMessages : function to get users for the selected user by passing the userId, and using the api /auth/messages/${userId}
+-> sendMessage : function to send messages to selected user with the help of selectedUser._id, and api /api/messages/send/${selectedUsed._id}
+-> we use the spread operator to add the prevMessages and newMessages together in the state setMessages.
+-> subscribeToMessages : function to subscibe to messages for selected user, if the socket is open, the message sender id and id of the user we selected are same then chatbox is open
+-> or the messages can be marked as seen, new messages are sent by a sender but the user we selected is not same as the user who sent the messages, then they can be marked as unseen.
+-> add setUnseenMessages to ...previousUnseenMessages, then count the newMessages with the help of the senderId and update in the newMessage.senderId + 1 
+-> unsubscribeFromMessages : function to unsubscribe from messages, then off the socket on the event newMessages.
+-> add the dependencies in the useEffect , socket and selectedUser, and add the subscribeToMessages() and return () => unsubscribeFromMessages();
