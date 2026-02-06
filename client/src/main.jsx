@@ -8,10 +8,10 @@ import { ChatProvider } from '../context/ChatContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-     <AuthProvider>
+    <AuthProvider>
       <ChatProvider>
-        <App/>
+        <App />
       </ChatProvider>
-     </AuthProvider>
+    </AuthProvider>
   </BrowserRouter>,
 )

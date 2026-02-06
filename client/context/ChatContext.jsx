@@ -115,7 +115,6 @@ export const ChatProvider = ({ children }) => {
         selectedUser,
         getUsers,
         getMessages,
-        setMessages,
         sendMessage,
         setSelectedUser,
         unseenMessages,
@@ -124,7 +123,7 @@ export const ChatProvider = ({ children }) => {
 
     return(
         <ChatContext.Provider value={value}>
-            {Children}
+            {children}
         </ChatContext.Provider>
     )
 }

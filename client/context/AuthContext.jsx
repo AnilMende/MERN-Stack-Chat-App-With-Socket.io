@@ -45,9 +45,11 @@ export const AuthProvider = ({ children }) => {
             if(data.success){
                 setAuthUser(data.userData);
                 connectSocket(data.userData);
-                axios.defaults.headers.common["token"] = token;
                 setToken(data.token);
+
+                // storing token and attaching it globally
                 localStorage.setItem("token", data.token);
+                axios.defaults.headers.common["token"] = data.token;
 
                 toast.success(data.message);
             }
