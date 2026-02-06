@@ -107,3 +107,15 @@ communication between client app and server.
 -> add setUnseenMessages to ...previousUnseenMessages, then count the newMessages with the help of the senderId and update in the newMessage.senderId + 1 
 -> unsubscribeFromMessages : function to unsubscribe from messages, then off the socket on the event newMessages.
 -> add the dependencies in the useEffect , socket and selectedUser, and add the subscribeToMessages() and return () => unsubscribeFromMessages();
+
+==> Added Features to Components like RightSideBar and ChatContainer <==
+-> For the right sidebar media we have to display the images by exluding the images.
+-> so use the state msgImages and with help of the filter store the images from the messages in setMsgImages.
+-> To logout use the logout from the AuthContext and add it in the onClick event.
+-> with the help of onlineUsers we can add whether a user is online or not with a green dot, by checking selectedUser._id is in onlineUsers or not.
+-> For chatContainer we need two function to handle messages and images.
+-> handleSendMessage : handle sending a message, handleSendImage : handle sending a image.
+-> In handleSendMessage if the input is empty we will not send message and if it is not empty add input in the sendMessage.
+-> In handleSendImage, we will get the file from the event.target.files[0], if the file is not selected or not in the required format we will get an error.
+-> FileReader() helps to read the images, image is in the reader.result and use it with the sendMessage, and file in the readAsDataURL.
+-> To get all the messages for user, getMessages() and add userId to get the messages for that user.
