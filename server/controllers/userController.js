@@ -29,6 +29,8 @@ export const signup = async (req, res) => {
 
         const token = generateToken(newUser._id);
 
+       // localStorage.setItem("token", token);
+
         res.json({ success: true, userData: newUser, token, message: "Account Created Successfully" });
 
     } catch (error) {
@@ -55,6 +57,7 @@ export const login = async (req, res) => {
 
         //if the credential are correct, we are generating a token
         const token = generateToken(userData._id);
+        //localStorage.setItem("token", token);
 
         res.json({ success: true, userData, token, message: "Login Successful" });
 
