@@ -119,3 +119,16 @@ communication between client app and server.
 -> In handleSendImage, we will get the file from the event.target.files[0], if the file is not selected or not in the required format we will get an error.
 -> FileReader() helps to read the images, image is in the reader.result and use it with the sendMessage, and file in the readAsDataURL.
 -> To get all the messages for user, getMessages() and add userId to get the messages for that user.
+
+==> Tech Stack <==
+-> React.js
+-> MongoDB
+-> Express.js
+-> Node.js
+-> jsonwebtoken for the authentication
+-> socket.io for bi-directional messaging between the users
+-> Created userModel and messageModel using mongoose.
+-> contextApi for sharing the properties between the components.
+-> react-router-dom is for Routes and Route
+-> userNavigate to navigate the user to other pages.
+
