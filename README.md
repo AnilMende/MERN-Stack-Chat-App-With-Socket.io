@@ -126,6 +126,9 @@ communication between client app and server.
 -> Express.js
 -> Node.js
 -> jsonwebtoken for the authentication
+
+==> Deployed Link <==
+-> https://chat-app-mu-azure.vercel.app
 -> socket.io for bi-directional messaging between the users
 -> Created userModel and messageModel using mongoose.
 -> contextApi for sharing the properties between the components.
